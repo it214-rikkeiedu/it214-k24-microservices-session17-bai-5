@@ -1,0 +1,26 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:grabfood_db;DB_CLOSE_DELAY=-1
+    username: sa
+    password: password
+    driver-class-name: org.h2.Driver
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  data:
+    redis:
+      host: localhost
+      port: 6379
+      timeout: 2000ms
+      connect-timeout: 2000ms
+
+logging:
+  level:
+    com.grabfood.fallback: DEBUG
+    org.springframework.cache: TRACE
